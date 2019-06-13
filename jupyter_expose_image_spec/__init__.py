@@ -12,7 +12,7 @@ from notebook.base.handlers import IPythonHandler
 
 class ImageSpecHandler(IPythonHandler):
     def get(self):
-        return {'JUPYTER_IMAGE_SPEC': os.getenv('JUPYTER_IMAGE_SPEC')}
+        self.write({'JUPYTER_IMAGE_SPEC': os.getenv('JUPYTER_IMAGE_SPEC')})
 
 
 def _jupyter_server_extension_paths():
